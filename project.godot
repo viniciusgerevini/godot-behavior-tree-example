@@ -1,0 +1,111 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Leaf",
+"class": "ActionLeaf",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/leaves/action.gd"
+}, {
+"base": "Decorator",
+"class": "AlwaysFailDecorator",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/decorators/failer.gd"
+}, {
+"base": "Decorator",
+"class": "AlwaysSucceedDecorator",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/decorators/succeeder.gd"
+}, {
+"base": "Node",
+"class": "BehaviorTree",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/behavior_tree.gd"
+}, {
+"base": "BehaviorTree",
+"class": "BehaviorTreeNode",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/bt_node.gd"
+}, {
+"base": "BehaviorTree",
+"class": "BehaviorTreeRoot",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/bt_root.gd"
+}, {
+"base": "BehaviorTreeNode",
+"class": "Composite",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/composites/composite.gd"
+}, {
+"base": "Leaf",
+"class": "ConditionLeaf",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/leaves/condition.gd"
+}, {
+"base": "BehaviorTreeNode",
+"class": "Decorator",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/decorators/decorator.gd"
+}, {
+"base": "Decorator",
+"class": "InverterDecorator",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/decorators/inverter.gd"
+}, {
+"base": "BehaviorTreeNode",
+"class": "Leaf",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/leaves/leaf.gd"
+}, {
+"base": "Decorator",
+"class": "LimiterDecorator",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/decorators/limiter.gd"
+}, {
+"base": "Composite",
+"class": "SelectorComposite",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/composites/selector.gd"
+}, {
+"base": "Composite",
+"class": "SequencerComposite",
+"language": "GDScript",
+"path": "res://addons/behavior_tree/nodes/composites/sequencer.gd"
+} ]
+_global_script_class_icons={
+"ActionLeaf": "res://addons/behavior_tree/icons/action.svg",
+"AlwaysFailDecorator": "res://addons/behavior_tree/icons/fail.svg",
+"AlwaysSucceedDecorator": "res://addons/behavior_tree/icons/succeed.svg",
+"BehaviorTree": "",
+"BehaviorTreeNode": "res://addons/behavior_tree/icons/action.svg",
+"BehaviorTreeRoot": "res://addons/behavior_tree/icons/tree.svg",
+"Composite": "res://addons/behavior_tree/icons/category_composite.svg",
+"ConditionLeaf": "res://addons/behavior_tree/icons/condition.svg",
+"Decorator": "res://addons/behavior_tree/icons/category_decorator.svg",
+"InverterDecorator": "res://addons/behavior_tree/icons/inverter.svg",
+"Leaf": "res://addons/behavior_tree/icons/action.svg",
+"LimiterDecorator": "res://addons/behavior_tree/icons/limiter.svg",
+"SelectorComposite": "res://addons/behavior_tree/icons/selector.svg",
+"SequencerComposite": "res://addons/behavior_tree/icons/sequencer.svg"
+}
+
+[application]
+
+config/name="BehaviorTreeExample"
+run/main_scene="res://bt_example/main.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "behavior_tree" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
