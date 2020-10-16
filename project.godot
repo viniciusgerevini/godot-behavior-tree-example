@@ -75,9 +75,9 @@ _global_script_classes=[ {
 "path": "res://addons/behavior_tree/nodes/composites/selector.gd"
 }, {
 "base": "Composite",
-"class": "SequencerComposite",
+"class": "SequenceComposite",
 "language": "GDScript",
-"path": "res://addons/behavior_tree/nodes/composites/sequencer.gd"
+"path": "res://addons/behavior_tree/nodes/composites/sequence.gd"
 } ]
 _global_script_class_icons={
 "ActionLeaf": "res://addons/behavior_tree/icons/action.svg",
@@ -93,7 +93,7 @@ _global_script_class_icons={
 "Leaf": "res://addons/behavior_tree/icons/action.svg",
 "LimiterDecorator": "res://addons/behavior_tree/icons/limiter.svg",
 "SelectorComposite": "res://addons/behavior_tree/icons/selector.svg",
-"SequencerComposite": "res://addons/behavior_tree/icons/sequencer.svg"
+"SequenceComposite": "res://addons/behavior_tree/icons/sequencer.svg"
 }
 
 [application]

@@ -5,7 +5,7 @@
 [ext_resource path="res://addons/behavior_tree/nodes/composites/selector.gd" type="Script" id=3]
 [ext_resource path="res://bt_example/actions/change_color.gd" type="Script" id=4]
 [ext_resource path="res://addons/behavior_tree/nodes/bt_root.gd" type="Script" id=5]
-[ext_resource path="res://addons/behavior_tree/nodes/composites/sequencer.gd" type="Script" id=6]
+[ext_resource path="res://addons/behavior_tree/nodes/composites/sequence.gd" type="Script" id=6]
 [ext_resource path="res://bt_example/conditions/is_target_nearby.gd" type="Script" id=7]
 [ext_resource path="res://bt_example/actions/go_to_target_position.gd" type="Script" id=8]
 [ext_resource path="res://bt_example/actions/find_closest_member_in_group.gd" type="Script" id=9]
@@ -13,6 +13,7 @@
 [ext_resource path="res://addons/behavior_tree/nodes/decorators/inverter.gd" type="Script" id=11]
 
 [node name="npc" type="Node2D"]
+position = Vector2( 0, -1 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

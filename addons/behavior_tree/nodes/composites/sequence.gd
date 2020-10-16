@@ -1,6 +1,6 @@
 extends Composite
 
-class_name SequencerComposite, "../../icons/sequencer.svg"
+class_name SequenceComposite, "../../icons/sequencer.svg"
 
 func tick(actor, blackboard):
 	for c in get_children():
