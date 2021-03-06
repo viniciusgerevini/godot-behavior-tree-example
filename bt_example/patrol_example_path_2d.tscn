@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://bt_example/actions/get_next_patrol_target_from_path2d.gd" type="Script" id=2]
+[ext_resource path="res://addons/behavior_tree/nodes/composites/sequence.gd" type="Script" id=3]
+[ext_resource path="res://addons/behavior_tree/nodes/bt_root.gd" type="Script" id=4]
+[ext_resource path="res://bt_example/actions/go_to_target_position.gd" type="Script" id=5]
+[ext_resource path="res://bt_example/npc.gd" type="Script" id=6]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 114.136, 307.738, 0, 0, 0, 0, 508.491, 475.307, 0, 0, 0, 0, 940.643, 293.879, 0, 0, 0, 0, 513.53, 62.0534, 0, 0, 0, 0, 509.751, 257.341, 0, 0, 0, 0, 248.947, 117.49 )
+}
+
+[node name="patrol_example" type="Node2D"]
+
+[node name="npc" type="Sprite" parent="."]
+position = Vector2( 395.615, 267.103 )
+texture = ExtResource( 1 )
+script = ExtResource( 6 )
+
+[node name="patrol_path" type="Path2D" parent="npc"]
+position = Vector2( -395.615, -267.103 )
+curve = SubResource( 1 )
+
+[node name="BehaviorTreeRoot" type="Node" parent="npc"]
+script = ExtResource( 4 )
+
+[node name="SequenceComposite" type="Node" parent="npc/BehaviorTreeRoot"]
+script = ExtResource( 3 )
+
+[node name="go to patrol point" type="Node" parent="npc/BehaviorTreeRoot/SequenceComposite"]
+script = ExtResource( 5 )
+target_key = "current_patrol_target"
+
+[node name="alternate patrol point" type="Node" parent="npc/BehaviorTreeRoot/SequenceComposite"]
+script = ExtResource( 2 )
+path = NodePath("../../../patrol_path")
+target_blackboard_key = "current_patrol_target"
