@@ -14,7 +14,7 @@ func _ready():
 		disable()
 		return
 
-func _process(delta):
+func _physics_process(delta):
 	if not enabled:
 		return
 
