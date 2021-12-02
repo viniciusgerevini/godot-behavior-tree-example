@@ -9,9 +9,10 @@ func set(key, value, blackboard_name = 'default'):
 	blackboard[blackboard_name][key] = value
 
 
-func get(key, blackboard_name = 'default'):
+func get(key, default_value = null, blackboard_name = 'default'):
 	if has(key, blackboard_name):
-		return blackboard[blackboard_name][key]
+		return blackboard[blackboard_name].get(key, default_value)
+	return default_value
 
 
 func has(key, blackboard_name = 'default'):
