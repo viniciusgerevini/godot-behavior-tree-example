@@ -11,17 +11,13 @@ width = 200
 
 [node name="main" type="Node2D"]
 
-[node name="home" type="Sprite" parent="." groups=[
-"home",
-]]
+[node name="home" type="Sprite" parent="." groups=["home"]]
 position = Vector2( 919.705, 473.868 )
 texture = SubResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 150, 150 )
 
-[node name="home2" type="Sprite" parent="." groups=[
-"home",
-]]
+[node name="home2" type="Sprite" parent="." groups=["home"]]
 position = Vector2( 105.452, 475.203 )
 texture = SubResource( 2 )
 region_enabled = true
