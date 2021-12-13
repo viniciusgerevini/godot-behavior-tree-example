@@ -4,7 +4,7 @@ In this project you will find an example o Behavior Tree implemented in Godot, w
 
 You can find the basic nodes under `/addons/behavior_tree`. Custom code is on `/bt_example`.
 
-This example was created for this video: https://www.youtube.com/watch?v=1rNLTHbFFaA
+This example was created for this video: https://www.youtube.com/watch?v=YHUQY2Kea9U
 
 
 ## What is this Behavior Tree doing
