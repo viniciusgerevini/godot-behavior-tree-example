@@ -1,27 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://6gtfhmh3mbni"]
 
-[ext_resource path="res://bt_example/npc.tscn" type="PackedScene" id=1]
+[ext_resource type="PackedScene" uid="uid://dbqwhitbrqnse" path="res://bt_example/npc.tscn" id="1"]
 
-[sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 0.588235, 0.372549, 0.372549, 1, 0.380392, 0.376471, 0.501961, 1 )
+[sub_resource type="Gradient" id="1"]
+colors = PackedColorArray(0.588235, 0.372549, 0.372549, 1, 0.380392, 0.376471, 0.501961, 1)
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture1D" id="2"]
+gradient = SubResource("1")
 width = 200
 
 [node name="main" type="Node2D"]
 
-[node name="home" type="Sprite" parent="." groups=["home"]]
-position = Vector2( 919.705, 473.868 )
-texture = SubResource( 2 )
+[node name="home" type="Sprite2D" parent="." groups=["home"]]
+position = Vector2(919.705, 473.868)
+texture = SubResource("2")
 region_enabled = true
-region_rect = Rect2( 0, 0, 150, 150 )
+region_rect = Rect2(0, 0, 150, 150)
 
-[node name="home2" type="Sprite" parent="." groups=["home"]]
-position = Vector2( 105.452, 475.203 )
-texture = SubResource( 2 )
+[node name="home2" type="Sprite2D" parent="." groups=["home"]]
+position = Vector2(105.452, 475.203)
+texture = SubResource("2")
 region_enabled = true
-region_rect = Rect2( 0, 0, 150, 150 )
+region_rect = Rect2(0, 0, 150, 150)
 
-[node name="npc" parent="." instance=ExtResource( 1 )]
-position = Vector2( 519.253, 245.611 )
+[node name="npc" parent="." instance=ExtResource("1")]
+position = Vector2(519.253, 245.611)

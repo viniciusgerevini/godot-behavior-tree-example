@@ -1,7 +1,7 @@
 extends ConditionLeaf
 
-export (float) var detection_radius = 300
-export (String) var target_key
+@export var detection_radius : float = 300
+@export var target_key : String
 
 
 func tick(actor, blackboard):

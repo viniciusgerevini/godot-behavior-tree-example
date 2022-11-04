@@ -6,79 +6,79 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
-_global_script_classes=[ {
+_global_script_classes=[{
 "base": "Leaf",
-"class": "ActionLeaf",
-"language": "GDScript",
+"class": &"ActionLeaf",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/leaves/action.gd"
 }, {
 "base": "Decorator",
-"class": "AlwaysFailDecorator",
-"language": "GDScript",
+"class": &"AlwaysFailDecorator",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/failer.gd"
 }, {
 "base": "Decorator",
-"class": "AlwaysSucceedDecorator",
-"language": "GDScript",
+"class": &"AlwaysSucceedDecorator",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/succeeder.gd"
 }, {
 "base": "Node",
-"class": "BehaviorTree",
-"language": "GDScript",
+"class": &"BehaviorTree",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/behavior_tree.gd"
 }, {
 "base": "BehaviorTree",
-"class": "BehaviorTreeNode",
-"language": "GDScript",
+"class": &"BehaviorTreeNode",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/bt_node.gd"
 }, {
 "base": "BehaviorTree",
-"class": "BehaviorTreeRoot",
-"language": "GDScript",
+"class": &"BehaviorTreeRoot",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/bt_root.gd"
 }, {
 "base": "BehaviorTreeNode",
-"class": "Composite",
-"language": "GDScript",
+"class": &"Composite",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/composites/composite.gd"
 }, {
 "base": "Leaf",
-"class": "ConditionLeaf",
-"language": "GDScript",
+"class": &"ConditionLeaf",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/leaves/condition.gd"
 }, {
 "base": "BehaviorTreeNode",
-"class": "Decorator",
-"language": "GDScript",
+"class": &"Decorator",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/decorator.gd"
 }, {
 "base": "Decorator",
-"class": "InverterDecorator",
-"language": "GDScript",
+"class": &"InverterDecorator",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/inverter.gd"
 }, {
 "base": "BehaviorTreeNode",
-"class": "Leaf",
-"language": "GDScript",
+"class": &"Leaf",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/leaves/leaf.gd"
 }, {
 "base": "Decorator",
-"class": "LimiterDecorator",
-"language": "GDScript",
+"class": &"LimiterDecorator",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/limiter.gd"
 }, {
 "base": "Composite",
-"class": "SelectorComposite",
-"language": "GDScript",
+"class": &"SelectorComposite",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/composites/selector.gd"
 }, {
 "base": "Composite",
-"class": "SequenceComposite",
-"language": "GDScript",
+"class": &"SequenceComposite",
+"language": &"GDScript",
 "path": "res://addons/behavior_tree/nodes/composites/sequence.gd"
-} ]
+}]
 _global_script_class_icons={
 "ActionLeaf": "res://addons/behavior_tree/icons/action.svg",
 "AlwaysFailDecorator": "res://addons/behavior_tree/icons/fail.svg",
@@ -100,11 +100,12 @@ _global_script_class_icons={
 
 config/name="BehaviorTreeExample"
 run/main_scene="res://bt_example/main.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "behavior_tree" )
+enabled=PackedStringArray("res://addons/behavior_tree/plugin.cfg")
 
 [rendering]
 

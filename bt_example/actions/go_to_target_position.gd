@@ -1,12 +1,12 @@
 extends ActionLeaf
 
-export (String) var target_key
+@export var target_key : String
 
 func tick(actor, blackboard):
 	var target_position = blackboard.get(target_key)
 
-	if not target_position:
-		return SUCCESS
+#	if not target_position:
+#		return SUCCESS
 
 	actor.move_towards_position(target_position, blackboard.get("delta"))
 
