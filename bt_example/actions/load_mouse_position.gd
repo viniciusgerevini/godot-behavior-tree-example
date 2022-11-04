@@ -1,6 +1,6 @@
 extends ActionLeaf
 
-export (String) var blackboard_key
+@export var blackboard_key : String
 
 func tick(actor, blackboard):
 	var mouse_position = get_viewport().get_mouse_position()

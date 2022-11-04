@@ -1,64 +1,64 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://dbqwhitbrqnse"]
 
-[ext_resource path="res://bt_example/npc.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://addons/behavior_tree/nodes/composites/selector.gd" type="Script" id=3]
-[ext_resource path="res://bt_example/actions/change_color.gd" type="Script" id=4]
-[ext_resource path="res://addons/behavior_tree/nodes/bt_root.gd" type="Script" id=5]
-[ext_resource path="res://addons/behavior_tree/nodes/composites/sequence.gd" type="Script" id=6]
-[ext_resource path="res://bt_example/conditions/is_target_nearby.gd" type="Script" id=7]
-[ext_resource path="res://bt_example/actions/go_to_target_position.gd" type="Script" id=8]
-[ext_resource path="res://bt_example/actions/find_closest_member_in_group.gd" type="Script" id=9]
-[ext_resource path="res://bt_example/actions/load_mouse_position.gd" type="Script" id=10]
-[ext_resource path="res://addons/behavior_tree/nodes/decorators/inverter.gd" type="Script" id=11]
+[ext_resource type="Script" path="res://bt_example/npc.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dqrai1jyul10b" path="res://icon.png" id="2"]
+[ext_resource type="Script" path="res://addons/behavior_tree/nodes/composites/selector.gd" id="3"]
+[ext_resource type="Script" path="res://bt_example/actions/change_color.gd" id="4"]
+[ext_resource type="Script" path="res://addons/behavior_tree/nodes/bt_root.gd" id="5"]
+[ext_resource type="Script" path="res://addons/behavior_tree/nodes/composites/sequence.gd" id="6"]
+[ext_resource type="Script" path="res://bt_example/conditions/is_target_nearby.gd" id="7"]
+[ext_resource type="Script" path="res://bt_example/actions/go_to_target_position.gd" id="8"]
+[ext_resource type="Script" path="res://bt_example/actions/find_closest_member_in_group.gd" id="9"]
+[ext_resource type="Script" path="res://bt_example/actions/load_mouse_position.gd" id="10"]
+[ext_resource type="Script" path="res://addons/behavior_tree/nodes/decorators/inverter.gd" id="11"]
 
 [node name="npc" type="Node2D"]
-position = Vector2( 0, -1 )
-script = ExtResource( 1 )
+position = Vector2(0, -1)
+script = ExtResource("1")
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2")
 
 [node name="BehaviorTreeRoot" type="Node" parent="."]
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="main" type="Node" parent="BehaviorTreeRoot"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="follow mouse" type="Node" parent="BehaviorTreeRoot/main"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="load mouse position" type="Node" parent="BehaviorTreeRoot/main/follow mouse"]
-script = ExtResource( 10 )
+script = ExtResource("10")
 blackboard_key = "mouse_position"
 
 [node name="is mouse cursor nearby" type="Node" parent="BehaviorTreeRoot/main/follow mouse"]
-script = ExtResource( 7 )
+script = ExtResource("7")
 target_key = "mouse_position"
 
 [node name="go to mouse position" type="Node" parent="BehaviorTreeRoot/main/follow mouse"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 target_key = "mouse_position"
 
 [node name="go home" type="Node" parent="BehaviorTreeRoot/main"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="find closest home position" type="Node" parent="BehaviorTreeRoot/main/go home"]
-script = ExtResource( 9 )
+script = ExtResource("9")
 target_key = "closest_home_position"
 group_name = "home"
 
 [node name="not in home" type="Node" parent="BehaviorTreeRoot/main/go home"]
-script = ExtResource( 11 )
+script = ExtResource("11")
 
 [node name="in home" type="Node" parent="BehaviorTreeRoot/main/go home/not in home"]
-script = ExtResource( 7 )
+script = ExtResource("7")
 detection_radius = 1.0
 target_key = "closest_home_position"
 
 [node name="go to home position" type="Node" parent="BehaviorTreeRoot/main/go home"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 target_key = "closest_home_position"
 
 [node name="change color" type="Node" parent="BehaviorTreeRoot/main"]
-script = ExtResource( 4 )
+script = ExtResource("4")

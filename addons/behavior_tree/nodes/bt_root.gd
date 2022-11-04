@@ -1,12 +1,13 @@
 extends BehaviorTree
 
-class_name BehaviorTreeRoot, "../icons/tree.svg"
+class_name BehaviorTreeRoot
+@icon("../icons/tree.svg")
 
 const Blackboard = preload("../blackboard.gd")
 
-export (bool) var enabled = true
+@export var enabled : bool = true
 
-onready var blackboard = Blackboard.new()
+@onready var blackboard = Blackboard.new()
 
 func _ready():
 	if self.get_child_count() != 1:

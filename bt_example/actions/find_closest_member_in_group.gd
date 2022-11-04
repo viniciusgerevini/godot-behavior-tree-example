@@ -1,7 +1,7 @@
 extends ActionLeaf
 
-export (String) var target_key
-export (String) var group_name
+@export var target_key : String
+@export var group_name : String
 
 func tick(actor, blackboard):
 	var targets = get_tree().get_nodes_in_group(group_name)
